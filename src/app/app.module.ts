@@ -10,22 +10,30 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookListComponent } from './UI/book/book-list/book-list.component';
+import { BookGateway } from './domain/models/Book/gateway/book-gateway';
+import { BookApiService } from './infrastructure/driven-adapter/book-api/book-api.service';
+import { BookAddComponent } from './UI/book/book-add/book-add.component';
+
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookListComponent,
+    BookAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: BookGateway, useClass: BookApiService }
   ],
   bootstrap: [AppComponent]
 })

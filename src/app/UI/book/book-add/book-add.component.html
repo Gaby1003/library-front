@@ -1,0 +1,31 @@
+<div class="container pt-2">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="text-center mb-2 card bg-light mt-5">
+                <div class="card-body">
+                    <h3>{{ titulo }}
+                    </h3>                    
+                    <br>
+                    <form class="card-body mt-4" #form="ngForm" (ngSubmit)="add()">
+                        <p class="text-left">Nombre del Libro</p>
+                        <input type="text" class="form-control" placeholder="*Nombre" 
+                        [(ngModel)]="book.bookName" name="bookName" required>
+                            <br>
+                        <p class="text-left">Editorial del Libro</p>
+                        <input type="text" placeholder="*Editorial"  class="form-control" 
+                        [(ngModel)]="book.bookName" name = "bookName" required>
+                            <br>
+                        <p class="text-left">Año de publicación</p>
+                        <input type="text" placeholder="*Año " class="form-control" 
+                        [(ngModel)]="book.publicationYear" name="publicationYear" required>
+                            <br>
+                        <div class="mt-3">                            
+                            <button type="text" class="btn btn-dark float-right" routerLink="/book-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+                            <button type="submit" class="btn btn-dark float-right mr-3"> <i class="fas fa-save fa-lg"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
