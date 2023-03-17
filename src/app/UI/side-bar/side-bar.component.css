@@ -1,0 +1,9 @@
+a{
+    color: white;
+    border-color: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    opacity: 90%;
+}

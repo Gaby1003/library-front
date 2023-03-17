@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from 'src/app/domain/models/book';
+import { Book } from 'src/app/domain/models/Book/book';
+
 import { AdminBook } from 'src/app/domain/usecase/admin-book';
 
 @Component({

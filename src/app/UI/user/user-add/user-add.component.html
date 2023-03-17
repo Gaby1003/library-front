@@ -1,0 +1,37 @@
+<div class="container pt-2">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="text-center mb-2 card bg-light mt-5">
+                <div class="card-body">
+                    <h3>{{ titulo }}
+                    </h3>                    
+                    <br>
+                    <form class="card-body mt-4"  >
+                        <p class="text-left">Nombre del usuario</p>
+                        <input type="text" ngModel class="form-control" placeholder="*Nombre" 
+                        name="userName"  [(ngModel)]="user.userName">
+                            <br>
+                        <p class="text-left">Apellido del usuario</p>
+                        <input type="text" ngModel placeholder="*Apellido"  class="form-control" 
+                         name = "userLastname"  [(ngModel)]="user.userLastname">
+                            <br>
+                        <select name="select" class="text-left" [(ngModel)]="user.documentType" class="form-control">
+                            <option [ngValue]="document"  *ngFor="let document of documents">
+                                {{document}}
+                            </option>
+                        </select>
+                            <br>
+                            <p class="text-left">Número de documento</p>
+                        <input type="text" ngModel placeholder="*Número"  class="form-control" 
+                         name = "documentNumber"  [(ngModel)]="user.documentNumber">
+                            <br>
+                        <div class="mt-3">                            
+                            <button type="text" class="btn btn-dark float-right" routerLink="/user-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+                            <button type="submit" (click)="add()" class="btn btn-dark float-right mr-3"> <i class="fas fa-save fa-lg"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
