@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { Book } from 'src/app/domain/models/Book/book';
 import { BookGateway } from 'src/app/domain/models/Book/gateway/book-gateway';
 import url from '../../helpers/helper';
@@ -16,7 +16,7 @@ export class BookApiService extends BookGateway{
 
 
   update(_book: Book): Observable<any> {
-    throw this.http.put<string>(url + this.baseURL + 'get', {body: _book});
+    return this.http.put<string>(url + this.baseURL + 'update', _book);
   }
   delete(id: number): Observable<any> {
     return this.http.delete<string>(url + this.baseURL+ 'delete', 
@@ -34,7 +34,7 @@ export class BookApiService extends BookGateway{
   }
 
   add(_book: Book):Observable<any>{
-    return this.http.post<string>(url + this.baseURL + 'add', {body: _book});
+    return this.http.post<string>(url + this.baseURL + 'add', _book);
   }
 
 

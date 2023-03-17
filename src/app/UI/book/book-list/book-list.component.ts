@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit{
   
   books$: Observable<Book[]>;
   books: Book[];
+  load: boolean = false;
 
   constructor(private _adminBook: AdminBook, private router: Router) {}
   
@@ -22,17 +23,23 @@ export class BookListComponent implements OnInit{
     this.books$.subscribe(
       (book) => {
         this.books = book;
+        this.load = true;
       }
     )
+    
   }
 
   deleteBook(id: number){
     this._adminBook.deleteteBook(id).subscribe(
-      () => {
-        this.router.navigate(['book-list'])
-      }
-    )
+      (res: any) => {
+        console.log(res)
+        window.location.reload();
+      },(error) => {
+        console.error(error);
+    }
+  );
   }
+    
 
 
 

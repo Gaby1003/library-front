@@ -6,22 +6,22 @@
                     <h3>{{ titulo }}
                     </h3>                    
                     <br>
-                    <form class="card-body mt-4" #form="ngForm" (ngSubmit)="add()">
+                    <form class="card-body mt-4"  >
                         <p class="text-left">Nombre del Libro</p>
-                        <input type="text" class="form-control" placeholder="*Nombre" 
-                        [(ngModel)]="book.bookName" name="bookName" required>
+                        <input type="text" ngModel class="form-control" placeholder="*Nombre" 
+                        name="bookName"  [(ngModel)]="book.bookName">
                             <br>
                         <p class="text-left">Editorial del Libro</p>
-                        <input type="text" placeholder="*Editorial"  class="form-control" 
-                        [(ngModel)]="book.bookName" name = "bookName" required>
+                        <input type="text" ngModel placeholder="*Editorial"  class="form-control" 
+                         name = "editorial"  [(ngModel)]="book.editorial">
                             <br>
                         <p class="text-left">Año de publicación</p>
-                        <input type="text" placeholder="*Año " class="form-control" 
-                        [(ngModel)]="book.publicationYear" name="publicationYear" required>
+                        <input type="number" ngModel placeholder="*Año " class="form-control" 
+                        name="publicationYear"  [(ngModel)]="book.publicationYear">
                             <br>
                         <div class="mt-3">                            
                             <button type="text" class="btn btn-dark float-right" routerLink="/book-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
-                            <button type="submit" class="btn btn-dark float-right mr-3"> <i class="fas fa-save fa-lg"></i></button>
+                            <button type="submit" (click)="add()" class="btn btn-dark float-right mr-3"> <i class="fas fa-save fa-lg"></i></button>
                         </div>
                     </form>
                 </div>
