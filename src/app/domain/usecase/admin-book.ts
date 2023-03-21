@@ -22,12 +22,16 @@ export class AdminBook {
         return this._bookGateway.add(_book);
     }
 
-    deleteteBook(id: number): Observable<any>{
+    deleteBook(id: number): Observable<any>{
         return this._bookGateway.delete(id);
     }
 
     updateBook(_book : Book): Observable<any>{
         return this._bookGateway.update(_book);
+    }
+
+    getBooks(): Observable<Book[]>{
+        return this._bookGateway.getBooks();
     }
 
 }

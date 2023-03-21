@@ -19,6 +19,10 @@ import { UserListComponent } from './UI/user/user-list/user-list.component';
 import { UserAddComponent } from './UI/user/user-add/user-add.component';
 import { UserGateway } from './domain/models/User/gateway/user-gateway';
 import { UserApiService } from './infrastructure/driven-adapter/user-api/user-api.service';
+import { InventoryUpdateComponent } from './UI/inventory/inventory-update/inventory-update.component';
+import { InventoryListComponent } from './UI/inventory/inventory-list/inventory-list.component';
+import { InventoryApiService } from './infrastructure/driven-adapter/inventory-api/inventory-api.service';
+import { InventoryGateway } from './domain/models/Inventory/gateway/inventory-gateway';
 
 
 registerLocaleData(en);
@@ -30,7 +34,9 @@ registerLocaleData(en);
     BookAddComponent,
     SideBarComponent,
     UserListComponent,
-    UserAddComponent
+    UserAddComponent,
+    InventoryUpdateComponent,
+    InventoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ registerLocaleData(en);
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     { provide: BookGateway, useClass: BookApiService },
-    { provide: UserGateway, useClass: UserApiService }
+    { provide: UserGateway, useClass: UserApiService },
+    { provide: InventoryGateway, useClass: InventoryApiService }
   ],
   bootstrap: [AppComponent]
 })

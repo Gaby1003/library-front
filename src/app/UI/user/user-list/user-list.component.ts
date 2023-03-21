@@ -29,7 +29,7 @@ export class UserListComponent {
   }
 
   deleteUser(id: number){
-    this._adminUser.deleteteUser(id).subscribe(
+    this._adminUser.deleteUser(id).subscribe(
       (res: any) => {
         console.log(res)
         window.location.reload();

@@ -1,4 +1,4 @@
-import { Book } from "./book";
+import { Book } from "../Book/book";
 
 export class Inventory{
     inventoryId: number;

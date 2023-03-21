@@ -30,7 +30,7 @@ export class BookListComponent implements OnInit{
   }
 
   deleteBook(id: number){
-    this._adminBook.deleteteBook(id).subscribe(
+    this._adminBook.deleteBook(id).subscribe(
       (res: any) => {
         console.log(res)
         window.location.reload();
