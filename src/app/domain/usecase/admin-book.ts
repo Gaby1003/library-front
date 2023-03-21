@@ -34,4 +34,8 @@ export class AdminBook {
         return this._bookGateway.getBooks();
     }
 
+    getBooksAvailable(): Observable<Book[]>{
+        return this._bookGateway.getBooksAvailable();
+    }
+
 }

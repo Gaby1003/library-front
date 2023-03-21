@@ -4,6 +4,7 @@ import { BookAddComponent } from './UI/book/book-add/book-add.component';
 import { BookListComponent } from './UI/book/book-list/book-list.component';
 import { HistoryAddComponent } from './UI/history/history-add/history-add.component';
 import { HistoryListComponent } from './UI/history/history-list/history-list.component';
+import { PenaltyComponent } from './UI/history/penalty/penalty.component';
 import { InventoryListComponent } from './UI/inventory/inventory-list/inventory-list.component';
 import { InventoryUpdateComponent } from './UI/inventory/inventory-update/inventory-update.component';
 import { UserAddComponent } from './UI/user/user-add/user-add.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'history-list', component: HistoryListComponent},
   {path: 'history-add', component: HistoryAddComponent},
   {path: 'history-edit/:userId/:bookId/:borrowingDate', component: HistoryAddComponent},
+  {path: 'penalty-list', component: PenaltyComponent},
 ];
 
 @NgModule({

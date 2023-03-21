@@ -46,7 +46,7 @@ export class InventoryUpdateComponent {
 
   add(){
     if(this.id === null){  
-      if(this.inventory){  
+      if(this.inventory && this.inventory.available <= this.inventory.quantity){  
         this._adminInventory.addInventory(this.inventory).subscribe(() => {
           this.router.navigate(['inventory-list'])
         },(error) => {
@@ -54,7 +54,7 @@ export class InventoryUpdateComponent {
         })
       }
     }else{
-      if(this.inventory){  
+      if(this.inventory && this.inventory.available <= this.inventory.quantity){  
         this.inventory.inventoryId = Number(this.id)
         this._adminInventory.updateInventory(this.inventory).subscribe(() => {
           this.router.navigate(['inventory-list'])

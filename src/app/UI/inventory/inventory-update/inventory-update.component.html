@@ -18,7 +18,11 @@
                             <br>
                         <p class="text-left">Cantidad de ejemplares</p>
                         <input type="number" ngModel placeholder="*Ejemplares " class="form-control" 
-                        name="publicationYear"  [(ngModel)]="inventory.quantity">
+                        name="quantity"  [(ngModel)]="inventory.quantity">
+                            <br>
+                            <p class="text-left">Cantidad de ejemplares disponibles</p>
+                        <input type="number" ngModel placeholder="*Ejemplares disponibles" class="form-control" 
+                        name="available"  [(ngModel)]="inventory.available">
                             <br>
                         <div class="mt-3">                            
                             <button type="text" class="btn btn-dark float-right" routerLink="/inventory-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>

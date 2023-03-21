@@ -41,5 +41,9 @@ export class BookApiService extends BookGateway{
     return this.http.get<Book[]>(url + this.baseURL + 'getBooksWithoutInventory');
   }
 
+  getBooksAvailable(): Observable<Book[]>{
+    return this.http.get<Book[]>(url + this.baseURL + 'getBooksAvailable');
+  }
+
 
 }

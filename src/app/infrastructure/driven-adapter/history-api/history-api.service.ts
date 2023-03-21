@@ -31,6 +31,10 @@ export class HistoryApiService  extends HistoryBookGateway{
     return this.http.get<Array<HistoryBook>>(url + this.baseURL + 'get');
   }
 
+  getPenalty(): Observable<HistoryBook[]> {
+    return this.http.get<Array<HistoryBook>>(url + this.baseURL + 'getPenalty');
+  }
+
   add(_historyBook: HistoryBook):Observable<any>{
     return this.http.post<string>(url + this.baseURL + 'add', _historyBook);
   }

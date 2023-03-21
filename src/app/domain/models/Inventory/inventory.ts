@@ -4,4 +4,5 @@ export class Inventory{
     inventoryId: number;
     book: Book;
     quantity: number;
+    available: number;
 }

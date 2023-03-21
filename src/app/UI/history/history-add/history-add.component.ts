@@ -43,7 +43,7 @@ export class HistoryAddComponent {
         console.log("aaaa")
       })
     }else{
-      await this._adminBook.getAllBooks().subscribe((res) => {
+      await this._adminBook.getBooksAvailable ().subscribe((res) => {
         console.log(res)
         this.books = res
         this.loadingBooks = true;

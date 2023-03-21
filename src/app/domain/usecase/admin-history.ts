@@ -19,6 +19,10 @@ export class AdminHistory {
         return this._historyBookGateway.getAll();
     }
 
+    getPenalty(): Observable<Array<HistoryBook>>{
+        return this._historyBookGateway.getPenalty();
+    }
+
     addBook(_historyBook : HistoryBook): Observable<any>{
         return this._historyBookGateway.add(_historyBook);
     }

@@ -34,8 +34,8 @@
                          name="borrowingDate">
                         <br>
                         
-                        <p class="text-left">Fecha de entrega</p>
-                        <input type="date" class="form-control" ngModel [(ngModel)]="history.deliveryDate"  name="deliveryDate">
+                        <p class="text-left" *ngIf="loading" >Fecha de entrega</p>
+                        <input type="date" class="form-control" ngModel [(ngModel)]="history.deliveryDate"  name="deliveryDate" *ngIf="loading" >
                         <br>
                         
 

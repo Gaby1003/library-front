@@ -27,6 +27,7 @@ import { HistoryListComponent } from './UI/history/history-list/history-list.com
 import { HistoryAddComponent } from './UI/history/history-add/history-add.component';
 import { HistoryBookGateway } from './domain/models/HistoryBook/gateway/history-book-gateway';
 import { HistoryApiService } from './infrastructure/driven-adapter/history-api/history-api.service';
+import { PenaltyComponent } from './UI/history/penalty/penalty.component';
 
 
 registerLocaleData(en);
@@ -42,7 +43,8 @@ registerLocaleData(en);
     InventoryUpdateComponent,
     InventoryListComponent,
     HistoryListComponent,
-    HistoryAddComponent
+    HistoryAddComponent,
+    PenaltyComponent
   ],
   imports: [
     BrowserModule,

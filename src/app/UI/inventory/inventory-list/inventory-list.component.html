@@ -11,6 +11,7 @@
         <th>Nombre</th>
         <th>Editorial</th>
         <th>Cantidad de ejemplares</th>
+        <th>Cantidad disponible</th>
         <th>Acciones</th>
       </tr>
     </thead>
@@ -19,6 +20,7 @@
         <td>{{ inventory.book.bookName }}</td>
         <td>{{ inventory.book.editorial }}</td>
         <td>{{ inventory.quantity }}</td>
+        <td>{{ inventory.available }}</td>
         <td><a><i class="fas fa-edit fa-lg text-success mr-2 ml-2" [routerLink]="['/inventory-edit/', inventory.book.bookId]"></i></a>
           <button type="button" class="btn btn-outline-light"> 
             <i (click)="deleteInventory(inventory.inventoryId)" class="fas fa-trash-alt fa-lg text-danger" ></i>

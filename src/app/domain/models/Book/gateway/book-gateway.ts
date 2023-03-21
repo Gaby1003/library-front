@@ -8,5 +8,6 @@ export abstract class BookGateway{
     abstract update(_book: Book): Observable<any>
     abstract delete(id: number): Observable<any>
     abstract getBooks(): Observable<Book[]>
+    abstract getBooksAvailable(): Observable<Book[]>
     
 }
