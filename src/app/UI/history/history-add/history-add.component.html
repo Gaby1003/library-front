@@ -1,0 +1,55 @@
+<div class="container pt-2">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="text-center mb-2 card bg-light mt-5" *ngIf="loadingBooks || loading">
+                <div class="card-body">
+                    <h3>{{ titulo }}
+                    </h3>                    
+                    <br>
+                    <form class="card-body mt-4"  >
+                        <p class="text-left">Libro</p>
+                        <select name="select" class="text-left" [(ngModel)]="history.book" class="form-control" *ngIf="loadingBooks">
+                            <option [ngValue]="book"  *ngFor="let book of books">
+                                {{book.bookName}}
+                            </option>
+                        </select>
+                        <input type="text"  class="form-control" 
+                            name="text"  value="{{history.book.bookName}}" readonly *ngIf="loading">
+                            <br>
+                            <p class="text-left">Usuario</p>
+                            <select name="select" class="text-left" [(ngModel)]="history.user" class="form-control" *ngIf="loadingBooks">
+                                <option [ngValue]="user"  *ngFor="let user of users">
+                                    {{user.userName + " " + user.userLastname | titlecase}}
+                                </option>
+                            </select>
+                            <input type="text"  class="form-control" 
+                                name="text"  value="{{history.user.userName +' '+ history.user.userLastname | titlecase}}" readonly *ngIf="loading">
+                                <br>
+                        
+                        <p class="text-left">Fecha de préstamo</p>
+                        <input type="date"  *ngIf="loading" class="form-control" ngModel 
+                        [(ngModel)]="history.borrowingDate" readonly   name="borrowingDate">
+
+                        <input type="date" *ngIf="loadingBooks" class="form-control" ngModel [(ngModel)]="history.borrowingDate"  
+                         name="borrowingDate">
+                        <br>
+                        
+                        <p class="text-left">Fecha de entrega</p>
+                        <input type="date" class="form-control" ngModel [(ngModel)]="history.deliveryDate"  name="deliveryDate">
+                        <br>
+                        
+
+                        <div class="mt-3">                            
+                            <button type="text" class="btn btn-dark float-right" routerLink="/history-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+                            <button type="submit" (click)="add()" class="btn btn-dark float-right mr-3"> <i class="fas fa-save fa-lg"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="loadingBooks">
+                    <p *ngIf="books.length == 0">No hay libros disponibles para realizar préstamo</p>
+                    <button *ngIf="books.length == 0"type="text" class="btn btn-dark float-right" routerLink="/history-list"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+                </div>
+                </div>
+            </div>
+    </div>
+</div>

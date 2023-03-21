@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookAddComponent } from './UI/book/book-add/book-add.component';
 import { BookListComponent } from './UI/book/book-list/book-list.component';
+import { HistoryAddComponent } from './UI/history/history-add/history-add.component';
+import { HistoryListComponent } from './UI/history/history-list/history-list.component';
 import { InventoryListComponent } from './UI/inventory/inventory-list/inventory-list.component';
 import { InventoryUpdateComponent } from './UI/inventory/inventory-update/inventory-update.component';
 import { UserAddComponent } from './UI/user/user-add/user-add.component';
@@ -18,6 +20,9 @@ const routes: Routes = [
   {path: 'inventory-list', component: InventoryListComponent},
   {path: 'inventory-add', component: InventoryUpdateComponent},
   {path: 'inventory-edit/:id', component: InventoryUpdateComponent},
+  {path: 'history-list', component: HistoryListComponent},
+  {path: 'history-add', component: HistoryAddComponent},
+  {path: 'history-edit/:userId/:bookId/:borrowingDate', component: HistoryAddComponent},
 ];
 
 @NgModule({

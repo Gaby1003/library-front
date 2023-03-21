@@ -23,6 +23,10 @@ import { InventoryUpdateComponent } from './UI/inventory/inventory-update/invent
 import { InventoryListComponent } from './UI/inventory/inventory-list/inventory-list.component';
 import { InventoryApiService } from './infrastructure/driven-adapter/inventory-api/inventory-api.service';
 import { InventoryGateway } from './domain/models/Inventory/gateway/inventory-gateway';
+import { HistoryListComponent } from './UI/history/history-list/history-list.component';
+import { HistoryAddComponent } from './UI/history/history-add/history-add.component';
+import { HistoryBookGateway } from './domain/models/HistoryBook/gateway/history-book-gateway';
+import { HistoryApiService } from './infrastructure/driven-adapter/history-api/history-api.service';
 
 
 registerLocaleData(en);
@@ -36,7 +40,9 @@ registerLocaleData(en);
     UserListComponent,
     UserAddComponent,
     InventoryUpdateComponent,
-    InventoryListComponent
+    InventoryListComponent,
+    HistoryListComponent,
+    HistoryAddComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,8 @@ registerLocaleData(en);
     { provide: NZ_I18N, useValue: en_US },
     { provide: BookGateway, useClass: BookApiService },
     { provide: UserGateway, useClass: UserApiService },
-    { provide: InventoryGateway, useClass: InventoryApiService }
+    { provide: InventoryGateway, useClass: InventoryApiService },
+    { provide: HistoryBookGateway, useClass: HistoryApiService }
   ],
   bootstrap: [AppComponent]
 })
